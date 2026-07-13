@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Entries</title>
+</head>
+
+<body>
+    <h1>All Entries</h1>
+    <%for(let oneEntry of allPublicEntries){%>
+        <p>
+            <%=oneEntry.title%>
+        </p>
+        <%if (oneEntry.owner==user._id){ %>
+            <button>Edit Entry</button>
+            <button>Delete Entry</button>
+            <%}%>
+                <hr>
+                <%}%>
+</body>
+
+</html>
