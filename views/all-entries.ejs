@@ -5,20 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Entries</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <h1>All Entries</h1>
-    <%for(let oneEntry of allPublicEntries){%>
-        <p>
-            <%=oneEntry.title%>
-        </p>
-        <%if (oneEntry.owner==user._id){ %>
-            <button>Edit Entry</button>
-            <button>Delete Entry</button>
-            <%}%>
-                <hr>
-                <%}%>
+    <%- include('./partials/navbar') %>
+
+        <div class="entries-container">
+
+            <h1>All Journals</h1>
+
+            <% for(let oneEntry of allPublicEntries){ %>
+
+                <div class="entry-card">
+
+                    <p class="entry-title">
+                        <%= oneEntry.title %>
+                    </p>
+
+                    <% if (user && oneEntry.owner==user._id) { %>
+                        <div class="entry-buttons">
+                            <button>Edit Journals</button>
+                            <button>Delete Journals</button>
+                        </div>
+                        <% } %>
+
+                </div>
+
+                <% } %>
+        </div>
+
 </body>
 
 </html>

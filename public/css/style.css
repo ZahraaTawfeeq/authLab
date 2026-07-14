@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+body {
+    background-color: #f4f1ea;
+    color: #4b3621;
+    min-height: 100vh;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+form {
+    background-color: white;
+    width: 350px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    color: #5b3a29;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #cbb89d;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #a66a3d;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #5b3a29;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a66a3d;
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #cbb89d;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    resize: vertical;
+    min-height: 150px;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+textarea:focus {
+    border-color: #a66a3d;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #5b3a29;
+    cursor: pointer;
+}
+
+label[for="isPublic"] {
+    display: inline;
+}
+
+form {
+    width: 450px;
+}
+
+form br {
+    display: none;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #5b3a29;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #a66a3d;
+}
+
+/* entries */
+.entries-container {
+    width: 700px;
+    margin: 40px auto;
+}
+
+.entries-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.empty-message {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.entry-card {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.entry-card:hover {
+    transform: translateY(-3px);
+}
+
+.entry-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5b3a29;
+}
+
+hr {
+    display: none;
+}
+
+.button {
+    display: block;
+    width: 180px;
+    margin: 30px auto;
+    padding: 12px;
+    background-color: #5b3a29;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #a66a3d;
+}
+
+
+/* home */
+.home-container {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-card {
+    background-color: white;
+    width: 500px;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home-card h1 {
+    color: #5b3a29;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.home-card p {
+    color: #6b4a36;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.home-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #5b3a29;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.home-button:hover {
+    background-color: #a66a3d;
+}
+
+/* navbar */
+nav {
+    background-color: #5b3a29;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #a66a3d;
+}
+
+
+/* Admin */
+
+.admin {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.admin-sidebar {
+    width: 220px;
+    background-color: #5b3a29;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.admin-sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.admin-sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.admin-sidebar a:hover {
+    background-color: #a66a3d;
+}
+
+
+.admin-main {
+    flex: 1;
+    padding: 35px;
+    background-color: #f4f1ea;
+}
+
+.admin-main h1 {
+    color: #5b3a29;
+}
+
+.admin-users {
+    background-color: white;
+    margin-top: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.admin-header {
+    background-color: #5b3a29;
+    color: white;
+    padding: 15px 20px;
+    font-weight: bold;
+}
+
+
+.admin-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+
+.admin-user:hover {
+    background-color: #faf6f0;
+}
+
+
+.delete-form {
+    margin: 0;
+    display: inline;
+}
+
+
+.delete-btn {
+    background-color: #8b3a3a;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.delete-form {
+    all: unset;
+    display: inline;
+}
+
+.delete-btn:hover {
+    background-color: #b14b4b;
+}

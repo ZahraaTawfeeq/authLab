@@ -5,19 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <h1>My Entries</h1>
-    <%if (!myEntries){%>
-        <p>empty entries</p>
-        <%}%>
-        <%for (let oneJournal of myEntries){%>
-            <p>
-                <%=oneJournal.title%>
-            </p>
-            <hr>
-            <%}%>
+
+    <body>
+            <%- include('./partials/navbar') %>
+
+        <div class="entries-container">
+
+            <h1>My Journals</h1>
+
+            <% if (!myEntries || myEntries.length===0) { %>
+                <p class="empty-message">No journals yet.</p>
+                <% } %>
+
+                    <% for (let oneJournal of myEntries) { %>
+                        <div class="entry-card">
+                            <p class="entry-title">
+                                <%= oneJournal.title %>
+                            </p>
+                        </div>
+                        <% } %>
+
+                            <a href="/entries/new" class="button">Add Journal</a>
+
+        </div>
+    </body>
 </body>
 
 </html>

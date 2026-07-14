@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user.js");
 const bcrypt = require("bcrypt");
+const isAdminSession = require("../middleware/isAdmin");
 
 
 // Sign up routes
@@ -24,11 +25,12 @@ router.post("/sign-up", async (req, res) => {
 
   // validation logic
 
+  // the logged in user will not be an admin
+  req.body.isAdmin = false;
+
   const user = await User.create(req.body);
   res.redirect("/auth/sign-in");
 });
-
-
 
 // Sign in routes
 router.get("/sign-in", (req, res) => {
@@ -40,7 +42,10 @@ router.get("/sign-in", (req, res) => {
 router.post("/sign-in", async (req, res) => {
   // First, get the user from the database
   const userInDatabase = await User.findOne({ username: req.body.username });
-  if (!userInDatabase) {
+
+  
+  // if user is not in database or user is deleted
+  if (!userInDatabase || userInDatabase.isDeleted) {
     return res.send("Login failed. Please try again.");
   }
 
@@ -56,13 +61,22 @@ router.post("/sign-in", async (req, res) => {
   // There is a user AND they had the correct password. Time to make a session!
   // Avoid storing the password, even in hashed format, in the session
   // If there is other data you want to save to `req.session.user`, do so here!
+
   req.session.user = {
     username: userInDatabase.username,
-    _id: userInDatabase._id
+    _id: userInDatabase._id,
+    isAdmin: userInDatabase.isAdmin
   };
 
-  res.redirect("/");
+  // redirect the admin to admin panel and normal user to home
+  if (userInDatabase.isAdmin) {
+    res.redirect('/admin')
+  } else {
+    res.redirect('/')
+  }
+
 });
+
 
 
 router.get("/sign-out", (req, res) => {
