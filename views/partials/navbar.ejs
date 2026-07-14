@@ -5,10 +5,15 @@
         <a href="/auth/sign-out">Logout</a>
         <a href="/entries/all">All Journals</a>
         <a href="/entries/my-entries">My Journals</a>
+        <!-- <a href="/toggle-admin">Admin</a> -->
+         
+        <% if (user.isAdmin){ %>
+            <a href="/admin">Admin</a>
+            <%}%>
+                <% } else { %>
+                    <a href="/auth/sign-up">Sign up</a>
+                    <a href="/auth/sign-in">Login</a>
+                    <a href="/entries/all">All Journals</a>
+                    <% } %>
 
-    <% } else { %>
-        <a href="/auth/sign-up">Sign up</a>
-        <a href="/auth/sign-in">Login</a>
-        <a href="/entries/all">All Journals</a>
-    <% } %>
 </nav>

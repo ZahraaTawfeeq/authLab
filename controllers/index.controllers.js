@@ -15,6 +15,10 @@ router.get('/admin', isAdminSession, async (req, res) => {
     } catch (err) { console.log('cannot redirect to admin panel ', err) }
 })
 
+// router.get('/toggle-admin', isAdminSession, (req, res) => {
+//     res.render('admin-panel.ejs')
+// })
+
 router.put('/admin/:id', async (req, res) => {
     try {
         if (isAdminSession) {

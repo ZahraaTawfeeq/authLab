@@ -26,8 +26,11 @@ router.post("/sign-up", async (req, res) => {
   // validation logic
 
   // the logged in user will not be an admin
-  req.body.isAdmin = false;
+  // req.body.isAdmin = false;
 
+  // testing purposes
+  req.body.isAdmin = Boolean(req.body.isAdmin)
+  
   const user = await User.create(req.body);
   res.redirect("/auth/sign-in");
 });
